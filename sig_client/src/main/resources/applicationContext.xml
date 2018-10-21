@@ -29,7 +29,7 @@
 					<bean class="org.bcos.channel.handler.ChannelConnections">
                         <property name="connectionsStr">
 							<list>
-								<value>aaa@127.0.0.1:30304</value>
+								<value>aaa@127.0.0.1:8891</value>
 							</list>
 						</property>
                     </bean>

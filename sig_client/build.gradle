@@ -19,14 +19,10 @@ repositories {
 
 
 List logger = [
-	"org.slf4j:jul-to-slf4j:1.7.10",
-	"org.apache.logging.log4j:log4j-api:2.1",
-	"org.apache.logging.log4j:log4j-core:2.1",
-	"org.apache.logging.log4j:log4j-slf4j-impl:2.1",
-	"org.apache.logging.log4j:log4j-web:2.1"
+		'org.slf4j:slf4j-log4j12:1.7.25'
 ]
 
-def spring_version="4.1.8.RELEASE"
+def spring_version="4.3.18.RELEASE"
 List spring =[ 
 	"org.springframework:spring-core:$spring_version", 
 	"org.springframework:spring-beans:$spring_version", 
@@ -39,20 +35,13 @@ List spring =[
 // In this section you declare the dependencies for your production and test code
 dependencies {
     compile logger,spring
-    runtime logger,spring
-    
-    compile "com.fasterxml.jackson.core:jackson-databind:2.8.8.1"
-    runtime "com.fasterxml.jackson.core:jackson-databind:2.8.8.1"
+
+    compile "com.fasterxml.jackson.core:jackson-databind:2.9.6"
     compile 'io.netty:netty-all:4.1.15.Final'
-    runtime 'io.netty:netty-all:4.1.15.Final'
-    compile 'io.netty:netty-tcnative:2.0.0.Final'
-    runtime 'io.netty:netty-tcnative:2.0.0.Final'
+    compile 'io.netty:netty-tcnative:2.0.18.Final'
    	compile 'com.google.guava:guava:19.0'
-   	runtime 'com.google.guava:guava:19.0'
    	compile files('lib/web3sdk.jar')
-	runtime files('lib/web3sdk.jar')
 	compile files('lib/fastjson-1.2.24.jar')
-	runtime files('lib/fastjson-1.2.24.jar')
    	// web3j
    	compile 'org.apache.httpcomponents:httpclient:4.5.2',
             'org.bouncycastle:bcprov-jdk15on:1.54',
