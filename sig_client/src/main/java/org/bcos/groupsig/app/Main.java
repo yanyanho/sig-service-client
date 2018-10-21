@@ -14,18 +14,17 @@
 
 package org.bcos.groupsig.app;
 
-import java.util.ArrayList;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.PrintStream;
-
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
-
-import java.io.*;
-import com.alibaba.fastjson.*;
+import java.util.ArrayList;
 
 
 public class Main {
-	private static Logger logger = LogManager.getLogger(RequestSigService.class);
+	private static Logger logger = LoggerFactory.getLogger(RequestSigService.class);
 	public static void main(String[] args) throws Exception {
 		try {
 			ConfigParser configObj = new ConfigParser(args[0]);
