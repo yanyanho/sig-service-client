@@ -15,51 +15,40 @@
 package org.bcos.groupsig.app;
 
 //common classes
-import java.math.BigInteger;
-import java.io.InputStream;
-import java.util.*;
-import java.util.concurrent.ExecutionException;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-import java.util.concurrent.ConcurrentHashMap;
-//web3j related
-import org.bcos.web3j.protocol.Web3j;
+
 import org.bcos.channel.client.Service;
-import org.bcos.web3j.protocol.channel.ChannelEthereumService;
-import org.bcos.web3j.protocol.core.methods.response.TransactionReceipt;
-import org.bcos.web3j.protocol.core.DefaultBlockParameterName;
-import org.bcos.web3j.protocol.core.methods.response.EthGetCode;
-import org.bcos.web3j.utils.Numeric;
-
-//common classes of authentication
-import java.security.KeyStore;
-import java.security.Key;
-import java.security.SignatureException;
-import java.security.interfaces.ECPrivateKey;
-
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
-
-//eth authentication related
-import org.bcos.web3j.crypto.Credentials;
-import org.bcos.web3j.crypto.ECKeyPair;
-import org.bcos.web3j.crypto.Keys;
-import org.bcos.web3j.crypto.Sign;
-
-//solidity java class generated automatically by web3sdk tool
 import org.bcos.groupsig.group_sig_sol.TestGroupSig;
 import org.bcos.groupsig.group_sig_sol.TestRingSig;
-
-//abi related classes
 import org.bcos.web3j.abi.datatypes.Address;
 import org.bcos.web3j.abi.datatypes.Utf8String;
-import org.bcos.web3j.abi.datatypes.generated.Uint8;
+import org.bcos.web3j.crypto.Credentials;
+import org.bcos.web3j.crypto.ECKeyPair;
+import org.bcos.web3j.protocol.Web3j;
+import org.bcos.web3j.protocol.channel.ChannelEthereumService;
+import org.bcos.web3j.protocol.core.DefaultBlockParameterName;
+import org.bcos.web3j.protocol.core.methods.response.EthGetCode;
+import org.bcos.web3j.protocol.core.methods.response.TransactionReceipt;
+import org.bcos.web3j.utils.Numeric;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.io.InputStream;
+import java.math.BigInteger;
+import java.security.Key;
+import java.security.KeyStore;
+import java.security.interfaces.ECPrivateKey;
+
+//web3j related
+//common classes of authentication
+//eth authentication related
+//solidity java class generated automatically by web3sdk tool
+//abi related classes
 //self-defined classes
-import org.bcos.groupsig.app.SigStruct;
 
 public class SigServiceApp {
-	private static Logger logger = LogManager.getLogger(RequestSigService.class);
+	private static Logger logger = LoggerFactory.getLogger(RequestSigService.class);
 	// web3j
 	private Web3j web3j;
 	ApplicationContext context;

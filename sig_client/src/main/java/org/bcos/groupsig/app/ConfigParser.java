@@ -14,21 +14,22 @@
 
 package org.bcos.groupsig.app;
 
+import com.alibaba.fastjson.JSONObject;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
-
-import com.alibaba.fastjson.JSONObject;
 
 public class ConfigParser {
 	private String configFile;
 	private String connIp;
 	private String connPort;
 	private int threadNum;
-	private static Logger logger = LogManager.getLogger(RequestSigService.class);
+	private static Logger logger = LoggerFactory.getLogger(RequestSigService.class);
 	public String getConnIp() {
 		return connIp;
 	}
