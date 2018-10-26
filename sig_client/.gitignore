@@ -3,7 +3,7 @@
 *.class
 
 ### Gradle template
-.gradle
+.gradle/
 /build
 gradle.properties
 
